@@ -28,7 +28,7 @@ Folder: face mask, Sub-folder: fresh, Probability: 0.7897\
 Folder: eye cream, Sub-folder: fresh, Probability: 0.0319\
 Folder: moisturizer, Sub-folder: fresh, Probability: 0.0210
 
-###New Model Output After Ablation Study
+### New Model Output After Ablation Study
 After conducting the ablation study and removing weight decay, the model provided the following outputs:
 
 Folder: sun protect, Sub-folder: supergoop!, Probability: 0.0906\
@@ -42,8 +42,9 @@ Original Top Prediction: face mask/fresh with a probability of 0.7897\
 Ablation Top Prediction: sun protect/supergoop! with a probability of 0.0906\
 \
 **Analysis**: The removal of weight decay led to a significant change in the top prediction. The original model was highly confident in predicting face mask/fresh, while the new model is less confident and predicts sun protect/supergoop! as the top category. This indicates that the regularization previously helped in making more confident and potentially accurate predictions.
-Probability Distribution
 
-**Original Model**: The top prediction had a much higher probability (0.7897) compared to the rest.
-**Ablation Model**: The probabilities are more evenly distributed (0.0906, 0.0821, and 0.0527).
+### Probability Distribution
+
+**Original Model**: The top prediction had a much higher probability (0.7897) compared to the rest.\
+**Ablation Model**: The probabilities are more evenly distributed (0.0906, 0.0821, and 0.0527).\
 **Analysis**: Removing weight decay resulted in a less confident model, as indicated by the more even distribution of probabilities. This could mean that without regularization, the model's decision boundaries have become less clear, leading to more uncertainty in predictions.

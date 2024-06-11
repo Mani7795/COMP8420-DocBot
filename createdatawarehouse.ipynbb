@@ -1,0 +1,44 @@
+import os
+import pandas as pd
+
+# Load the data from the provided CSV file
+data = pd.read_csv("C:/Users/anand/Downloads/cosmetics.csv")
+
+# Define the base path for the synthetic data warehouse
+base_path = "synthetic_data_warehouse"
+
+# Create the base directory if it doesn't exist
+if not os.path.exists(base_path):
+    os.makedirs(base_path)
+
+for _, row in data.iterrows():
+    label_folder = os.path.join(base_path, row["Label"])
+    brand_folder = os.path.join(label_folder, row["Brand"])
+    os.makedirs(brand_folder, exist_ok=True)
+    
+    # Clean the file name to avoid issues with special characters
+    file_name = (
+        row["Name"]
+        .replace(" ", "_")
+        .replace("™", "")
+        .replace("+", "")
+        .replace("'", "")
+        .replace("/", "_")
+        .replace("\\", "_")
+        .replace("CC", "CC_")
+        .replace(":", "")
+        .replace("*", "")
+        .replace("?", "")
+        .replace("\"", "")
+        .replace("<", "")
+        .replace(">", "")
+        .replace("|", "")
+    ) + ".pdf"
+    
+    file_path = os.path.join(brand_folder, file_name)
+    
+    # Write a dummy PDF file
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(f"Dummy content for {row['Name']}")
+
+print("Synthetic data warehouse created successfully.")

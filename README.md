@@ -1,5 +1,17 @@
 # COMP8420-DocBot
- 
+#### Instructions to run the code:
+##### Ensure the Dataset is Properly Placed 
+Place your dataset in the same directory as the NLP.ipynb file. This ensures the code can easily access and load the dataset.
+
+##### Install Required Packages
+Before running the code, make sure to install all necessary packages. This can be done by running the requirements.txt file:\
+pip install -r requirements.txt
+
+If there are any additional packages that are not included in the requirements.txt file, they can be installed individually as shown below:\
+pip install numpy scikit-learn datasets transformers torch rouge_score
+
+##### Run the main file 
+
 # DocBot: Intelligent Document Discovery
 ## Overview
 In large enterprises, navigating extensive data warehouses to locate specific files and their respective paths can be a daunting task. This project addresses this real-world challenge by developing an Intelligent Question Answering (QA) system designed to enhance document discovery. The system aims to predict the correct file path, including folders and subfolders, when provided with a filename, thereby streamlining data retrieval processes in complex data environments. The output also gives the top 3 outputs with the highest probabilities as the folder names the files are located in.

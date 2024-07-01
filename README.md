@@ -1,4 +1,4 @@
-# COMP8420-DocBot
+# DocBot
 #### Instructions to run the code:
 ##### Ensure the Dataset is Properly Placed 
 Place your dataset in the same directory as the NLP.ipynb file. This ensures the code can easily access and load the dataset.
